@@ -388,8 +388,10 @@ html, body {
 }
 
 /* ── EXPLAINER ── */
-.explainer { display: none; margin-top: 36px; }
-.explainer.open { display: block; }
+.explainer  { display: none; margin-top: 36px; }
+.explainer.open  { display: block; }
+.expandable { display: none; margin-top: 36px; }
+.expandable.open { display: block; }
 
 /* ── UNIT ECON GRID ── */
 .ue-grid {
@@ -635,6 +637,204 @@ html, body {
   vertical-align: middle;
   text-transform: uppercase;
 }
+
+/* ── GLOSSARY ── */
+.gloss-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.gloss-card {
+  background: var(--white);
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.gloss-card:hover { background: var(--grey4); }
+.gloss-term {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.gloss-full {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--grey1);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.gloss-body {
+  font-size: 10.5px;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.65;
+  flex: 1;
+}
+.gloss-naas {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  color: var(--red);
+  letter-spacing: 0.3px;
+  padding-top: 6px;
+  border-top: 1px solid var(--grey3);
+  line-height: 1.5;
+}
+
+/* ── METRIC RELATIONSHIPS ── */
+.rel-block {
+  border: 1px solid var(--rule);
+  margin-bottom: 24px;
+}
+.rel-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 20px;
+  background: var(--grey4);
+  border-bottom: 1px solid var(--rule);
+}
+.rel-formula {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--red);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.rel-title {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+}
+.rel-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0;
+}
+.rel-explanation {
+  padding: 20px 24px 20px 20px;
+  border-right: 1px solid var(--rule);
+}
+.rel-explanation p {
+  font-size: 11px;
+  font-weight: 300;
+  color: #3a3a3a;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.rel-explanation p:last-child { margin-bottom: 0; }
+.rel-explanation strong { font-weight: 500; color: var(--ink); }
+.rel-diagram {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  background: var(--white);
+}
+
+/* Chain diagram */
+.rel-chain {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.rel-node {
+  background: var(--grey4);
+  border: 1px solid var(--rule);
+  padding: 8px 10px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink);
+  line-height: 1.4;
+  flex: 1;
+  min-width: 60px;
+}
+.rel-node span { font-size: 8px; color: var(--grey1); display: block; margin-top: 3px; }
+.rel-node-result { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.rel-node-result span { color: var(--grey2); }
+.rel-arrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--grey2);
+  flex-shrink: 0;
+}
+.rel-arrow-eq { color: var(--red); font-size: 14px; font-weight: 700; }
+
+/* Benchmarks */
+.rel-benchmarks { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.rel-bm { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 8.5px; color: var(--grey1); }
+.bm-bar { display: inline-block; height: 8px; border-radius: 1px; flex-shrink: 0; }
+
+/* Stacked ARR bars */
+.rel-stack-label { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--grey1); margin-bottom: 10px; }
+.rel-stack-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.rel-stack-yr { font-family: var(--mono); font-size: 9px; color: var(--grey1); min-width: 24px; }
+.rel-stack-bar-wrap { display: flex; flex: 1; height: 22px; gap: 1px; }
+.rel-stack-seg { height: 100%; border-radius: 1px; }
+.rel-stack-total { font-family: var(--mono); font-size: 9px; color: var(--ink); min-width: 44px; text-align: right; }
+.rel-stack-legend { display: flex; gap: 16px; font-family: var(--mono); font-size: 8.5px; color: var(--grey1); margin-top: 4px; }
+
+/* Margin rows */
+.rel-margin-rows { display: flex; flex-direction: column; gap: 8px; }
+.rel-margin-row { display: flex; align-items: center; gap: 10px; }
+.rel-margin-yr { font-family: var(--mono); font-size: 9px; color: var(--grey1); min-width: 24px; }
+.rel-margin-wrap { position: relative; flex: 1; height: 22px; }
+.rel-margin-arr { height: 100%; border-radius: 1px; display: flex; align-items: center; padding-left: 6px; font-family: var(--mono); font-size: 8px; color: var(--white); background: var(--grey2); white-space: nowrap; }
+.rel-margin-opex { height: 100%; display: flex; align-items: center; padding-left: 4px; font-family: var(--mono); font-size: 7px; color: var(--white); background: var(--red); white-space: nowrap; }
+.rel-margin-val { font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--ink); min-width: 44px; text-align: right; }
+
+/* Break-even timeline */
+.rel-be-timeline { display: flex; flex-direction: column; gap: 5px; }
+.rel-be-row { display: flex; align-items: center; gap: 8px; }
+.rel-be-label { font-family: var(--mono); font-size: 8.5px; color: var(--grey1); min-width: 64px; }
+.rel-be-track { flex: 1; height: 16px; background: var(--grey4); border-radius: 2px; overflow: hidden; }
+.rel-be-fill { height: 100%; border-radius: 2px; }
+.rel-be-fill.neg { background: var(--red-lt); border-right: 2px solid var(--red); }
+.rel-be-fill.pos { background: var(--grey3); border-right: 2px solid var(--ink); }
+.rel-be-val { font-family: var(--mono); font-size: 9px; min-width: 44px; text-align: right; }
+
+/* DCF bars */
+.rel-dcf-rows { display: flex; flex-direction: column; gap: 5px; }
+.rel-dcf-row { display: flex; align-items: center; gap: 8px; }
+.rel-dcf-yr { font-family: var(--mono); font-size: 8.5px; color: var(--grey1); min-width: 50px; }
+.rel-dcf-bar-wrap { flex: 1; height: 20px; background: var(--grey4); border-radius: 2px; overflow: hidden; position: relative; }
+.rel-dcf-neg { height: 100%; background: var(--red-lt); border-right: 2px solid var(--red); display: flex; align-items: center; padding-left: 6px; font-family: var(--mono); font-size: 8px; color: var(--red); }
+.rel-dcf-pos { height: 100%; background: var(--grey2); border-radius: 2px; display: flex; align-items: center; padding-left: 6px; font-family: var(--mono); font-size: 8px; color: var(--ink); white-space: nowrap; }
+
+/* Funnel */
+.rel-funnel { display: flex; flex-direction: column; gap: 2px; }
+.rel-funnel-row { display: flex; }
+.rel-funnel-bar {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.rel-funnel-label { font-family: var(--mono); font-size: 9px; font-weight: 400; color: var(--ink); }
+.rel-funnel-sub { font-family: var(--mono); font-size: 8px; color: var(--grey1); margin-top: 2px; }
+.rel-funnel-arrow {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  color: var(--grey1);
+  padding: 3px 0 3px 8px;
+  letter-spacing: 0.3px;
+}
+
 </style>
 </head>
 <body>
@@ -794,7 +994,7 @@ html, body {
   <hr class="rule">
 
   <!-- EXPLAINER TOGGLE -->
-  <button class="toggle-btn" onclick="toggleExplainer()">
+  <button class="toggle-btn" onclick="toggleSection('explainer', 'toggle-icon')">
     <span class="toggle-icon" id="toggle-icon">+</span>
     <span class="toggle-label">Model explainer & investor notes</span>
   </button>
@@ -1000,6 +1200,606 @@ html, body {
 
   </div><!-- /explainer -->
 
+
+  <hr class="rule" style="margin-top: 56px;">
+
+  <!-- GLOSSARY TOGGLE -->
+  <button class="toggle-btn" onclick="toggleSection('glossary-body', 'glossary-icon')">
+    <span class="toggle-icon" id="glossary-icon">+</span>
+    <span class="toggle-label">Glossary of terms & acronyms</span>
+  </button>
+
+  <div class="expandable" id="glossary-body">
+    <p style="font-size:11.5px; font-weight:300; color:var(--grey1); line-height:1.65; margin-top:28px; margin-bottom:32px; max-width:700px;">
+      Reference definitions for every term, acronym, and concept used in this model. Grouped by category. Where a term has a specific NaaS value, it is noted alongside the definition.
+    </p>
+
+    <!-- CATEGORY: REVENUE & BUSINESS MODEL -->
+    <div class="section-label">Revenue & business model</div>
+    <div class="gloss-grid" style="margin-bottom:40px;">
+
+      <div class="gloss-card">
+        <div class="gloss-term">ARR <span class="gloss-full">Annual Recurring Revenue</span></div>
+        <div class="gloss-body">Total expected revenue per year at the current run-rate, assuming all active offices remain onboarded and active. The primary top-line metric for subscription businesses. ARR = (subscription ARR) + (commission ARR). Crucially, ARR is not the same as cash collected — it is an annualised projection of current momentum.</div>
+        <div class="gloss-naas">NaaS base case: €84K (Y1) → €462K (Y2) → €1.2M (Y3)</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Subscription ARR</div>
+        <div class="gloss-body">The portion of ARR derived from fixed monthly fees — predictable and independent of case volume. It is the floor: even if an office processes zero cases in a month, subscription revenue accrues. This is what makes the model resilient under the bear case.</div>
+        <div class="gloss-naas">€500/month × 12 × offices × ramp = subscription ARR</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Commission ARR</div>
+        <div class="gloss-body">The portion of ARR derived from a percentage of each notarial act's gross fee value. Unlike subscription, commission scales with usage — more cases processed means more revenue without additional fixed costs. This is the growth lever above the subscription floor.</div>
+        <div class="gloss-naas">acts/day × 240 days × avg fee × 5% × offices × ramp</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Blended ARR / office</div>
+        <div class="gloss-body">The combined annual revenue NaaS earns from a single fully-active office: subscription plus commission at full utilisation (100% ramp). This is the steady-state value of one customer, used in LTV and market sizing calculations. It is not the Y1 reality — ramp rates reduce it in early years.</div>
+        <div class="gloss-naas">€6,000 (sub) + €10,500 (commission) = €16,500/year</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Commission rate</div>
+        <div class="gloss-body">The percentage of each notarial act's gross fee value that NaaS retains as revenue. Applied to the total value of acts processed through the platform — not to NaaS's subscription fee. The notary bears this cost; the client pays nothing to NaaS.</div>
+        <div class="gloss-naas">5% of gross act value per case</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Gross act value / office / year</div>
+        <div class="gloss-body">The total fee value of all notarial acts processed by one fully-active office in a year. This is the pool from which NaaS's commission is drawn. It is a much larger number than NaaS's revenue — NaaS captures only 5% of it.</div>
+        <div class="gloss-naas">25 acts × 240 days × €35 = €210,000/office/year</div>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY: UNIT ECONOMICS -->
+    <div class="section-label">Unit economics</div>
+    <div class="gloss-grid" style="margin-bottom:40px;">
+
+      <div class="gloss-card">
+        <div class="gloss-term">LTV <span class="gloss-full">Lifetime Value</span></div>
+        <div class="gloss-body">The total revenue NaaS expects to earn from a single office over its entire time on the platform. Calculated as blended ARR × expected customer lifetime in years. A high LTV relative to CAC is the core argument for the business model's efficiency. The zero-churn assumption makes this the ceiling — a realistic LTV with modest churn would be lower, but still exceptional.</div>
+        <div class="gloss-naas">€16,500 × 10 years = €165,000 (zero churn assumed)</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">CAC <span class="gloss-full">Customer Acquisition Cost</span></div>
+        <div class="gloss-body">The fully-loaded cost of acquiring one paying customer — one notary office. Includes founder time, outreach costs, demo preparation, and follow-up. No paid advertising or sales hire is assumed. The warm referral figure (~€500) reflects a scenario where early offices refer peers; the conservative ceiling (~€2,500) assumes cold outreach only with no referral network.</div>
+        <div class="gloss-naas">~€500 (warm referral) · ~€2,500 (conservative ceiling)</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">LTV : CAC ratio</div>
+        <div class="gloss-body">The single most important efficiency metric in a subscription business. Expresses how much lifetime revenue a customer generates relative to the cost of acquiring them. Benchmarks: 1:1 = break-even on acquisition, 3:1 = healthy SaaS, 10:1 = excellent. Anything above 10:1 in a B2B market is structurally strong. The NaaS figures are extreme because the market is enumerable, the customer list is known, and there is no paid acquisition.</div>
+        <div class="gloss-naas">~330:1 (warm) · ~66:1 (conservative) · healthy SaaS = 3:1</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Ramp rate</div>
+        <div class="gloss-body">The utilisation factor applied to each year's cohort of offices, reflecting that newly onboarded offices take time to reach full subscription and case volume. Two separate ramp rates are used: one for subscription (faster — offices start paying immediately) and one for commission (slower — case volume builds over months). By Y3, both reach 90%.</div>
+        <div class="gloss-naas">Sub: 50% / 80% / 90% · Comm: 30% / 70% / 90% (Y1/Y2/Y3)</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Churn</div>
+        <div class="gloss-body">The rate at which customers stop using the platform. Zero churn is assumed in the LTV calculation — aggressive, but defensible for a workflow-integrated B2B tool in a regulated market: the platform becomes the case management system, creating genuine switching costs. If pressed, model LTV at 7-year retention (~€115K) — LTV:CAC remains exceptional at either figure.</div>
+        <div class="gloss-naas">Assumed 0% in base model. Sensitivity: 30% churn → LTV ~€115K</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Net margin</div>
+        <div class="gloss-body">Net FCF ÷ ARR, expressed as a percentage. Measures how much of revenue becomes profit after all operating costs. High net margins are the expected outcome of a platform business with near-zero marginal cost per additional office — OpEx stays flat while ARR compounds. The Y3 figure of 92.5% will face scrutiny and should be defended with the tech stack cost breakdown.</div>
+        <div class="gloss-naas">Y2: 78.4% · Y3: 92.5% · Y4–Y5: ~95–97%</div>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY: MARKET SIZING -->
+    <div class="section-label">Market sizing</div>
+    <div class="gloss-grid" style="margin-bottom:40px;">
+
+      <div class="gloss-card">
+        <div class="gloss-term">TAM <span class="gloss-full">Total Addressable Market</span></div>
+        <div class="gloss-body">The maximum theoretical revenue NaaS could generate if it served every notary office in Romania at full utilisation. A ceiling, not a target — used to show the outer boundary of the opportunity. Excludes real estate authentication and succession acts, making it conservative.</div>
+        <div class="gloss-naas">1,984 × 25 × 240 × €35 = €417M/year</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">SAM <span class="gloss-full">Serviceable Addressable Market</span></div>
+        <div class="gloss-body">The portion of TAM NaaS can realistically reach given its product, pricing, and go-to-market approach. Defined as the urban, digitally-ready subset of offices — approximately 50% of the total. The 50% filter is a judgement call; no official UNNPR segmentation by urbanisation exists. Disclose if asked.</div>
+        <div class="gloss-naas">~1,000 offices × €16,500 = €16.5M/year</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">SOM <span class="gloss-full">Serviceable Obtainable Market</span></div>
+        <div class="gloss-body">The realistic share of SAM NaaS can capture within the 5-year horizon. Conventionally set at 10% of SAM for pre-seed models — a standard investor convention, not a precise forecast. Consistent with the Y5 office trajectory (150 offices ≈ 15% of SAM, slightly exceeding the SOM floor).</div>
+        <div class="gloss-naas">100 offices × €16,500 = €1.65M/year (10% of SAM)</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">UNNPR</div>
+        <div class="gloss-body">Uniunea Națională a Notarilor Publici din România. The national regulatory body governing all Romanian notary offices. Maintains the official public register (Tabloul Notarilor Publici) which lists all 1,984 offices by name, address, and contact — the source of NaaS's market sizing and the reason CAC is low: every prospect is already named.</div>
+        <div class="gloss-naas">Source: Tabloul Notarilor Publici 2024 · 1,984 offices total</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Simple acts</div>
+        <div class="gloss-body">The category of notarial acts NaaS's model is built around — standardisable, repeatable, lower complexity: declarations, powers of attorney, affidavits, certifications, and consents. Excludes real estate authentication and succession, which are higher-value but less frequent and more complex. Using simple acts makes the TAM conservative — real estate would add materially.</div>
+        <div class="gloss-naas">Basis for the €417M TAM. Real estate and succession excluded.</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Diaspora multiplier</div>
+        <div class="gloss-body">The structural demand driver from Romania's 3.5M citizens abroad who require notarial acts in Romania — proxies, powers of attorney, property transactions — without returning. Drives inbound volume to Romanian offices independently of the domestic population. Not modelled explicitly above the baseline acts/day assumption; commission upside from diaspora-driven volume is not captured.</div>
+        <div class="gloss-naas">3.5M Romanians abroad (OECD 2019 · World Bank 2018)</div>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY: VALUATION & FINANCE -->
+    <div class="section-label">Valuation & finance</div>
+    <div class="gloss-grid" style="margin-bottom:40px;">
+
+      <div class="gloss-card">
+        <div class="gloss-term">FCF <span class="gloss-full">Free Cash Flow</span></div>
+        <div class="gloss-body">Cash generated after all operating costs. At this stage, used as a proxy for net income: FCF = ARR − OpEx. A positive FCF means the business generates more cash than it spends. Cumulative FCF tracks whether total cash generated has exceeded total cash spent since launch — the basis for the cumulative break-even calculation.</div>
+        <div class="gloss-naas">Y1: −€66K · Y2: +€362K · Y3: +€1.11M</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">OpEx <span class="gloss-full">Operating Expenditure</span></div>
+        <div class="gloss-body">Total annual platform costs: tooling and hosting (Squarespace, Airtable, Zapier, Stripe), part-time operations support, and founder-led outreach. Deliberately structured to be flat from Y3 — the platform does not require proportionally more infrastructure as office count grows. This is the architectural source of the high net margins.</div>
+        <div class="gloss-naas">€150K (Y1) → €100K (Y2) → €90K (Y3+) → ~€110K (Y5)</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">DCF <span class="gloss-full">Discounted Cash Flow</span></div>
+        <div class="gloss-body">A valuation method that estimates the present value of a business by discounting its projected future cash flows back to today using a risk-adjusted rate (WACC). The logic: a euro in five years is worth less than a euro today, because of risk and opportunity cost. At 40% WACC, €1 in Y5 is worth only ~€0.19 today. DCF is used as the supporting valuation method; revenue multiple is primary.</div>
+        <div class="gloss-naas">Sum of PV FCFs: +€1,577K · PV terminal value: +€1,496K · Total: €3,073K</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">WACC <span class="gloss-full">Weighted Average Cost of Capital</span></div>
+        <div class="gloss-body">The discount rate used in DCF — reflects the risk of investing in this business. Higher WACC = higher risk = lower present value of future cash flows. 40% is appropriate for pre-seed stage: no audited financials, early market, two pilot offices. Be ready to explain it; it is unusually high to a general audience but standard for the stage.</div>
+        <div class="gloss-naas">40% — pre-seed standard. Discount factor Y5: 1 ÷ (1.40)⁵ = 0.186</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">PV <span class="gloss-full">Present Value</span></div>
+        <div class="gloss-body">The current worth of a future cash flow, after applying the WACC discount. Calculated as: future cash flow ÷ (1 + WACC)^year. PV is always smaller than the nominal future figure — the further out the cash flow, the deeper the discount. Summing all PVs gives the DCF valuation.</div>
+        <div class="gloss-naas">PV of Y3 FCF: €1,110K × 0.364 = €405K</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Terminal value</div>
+        <div class="gloss-body">An estimate of the value of all cash flows beyond Y5, modelled as a perpetuity growing at a constant long-term rate. Uses the Gordon Growth Model. It represents "what is the business worth after our explicit forecast period ends?" — typically the largest single component of a DCF valuation. Use with caution and disclose the growth rate assumption.</div>
+        <div class="gloss-naas">FCF_Y5 × 1.03 ÷ (0.40 − 0.03) = €8,049K · PV: €1,496K</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Gordon Growth Model</div>
+        <div class="gloss-body">The formula used to calculate terminal value: FCF × (1 + g) ÷ (WACC − g), where g is the assumed long-term growth rate. The result is the present value of a cash flow stream growing at rate g forever, discounted at WACC. Sensitive to the gap between WACC and g — small changes in g have a large effect. NaaS uses g = 3% (conservative long-term GDP-level growth).</div>
+        <div class="gloss-naas">g = 3% · WACC = 40% · denominator = 37%</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Revenue multiple</div>
+        <div class="gloss-body">A valuation shortcut: company value = annual revenue × a multiple. Multiples vary by stage, sector, and growth rate. Pre-seed SaaS ranges from 3× to 10×. NaaS uses 5× applied to SOM (the obtainable annual revenue) as the primary valuation method — the conservative end of the range, applied to the conservative revenue figure. This is more defensible than applying a higher multiple to ARR projections.</div>
+        <div class="gloss-naas">5× × SOM (€1.65M) = €8.25M terminal · PV: €1.53M</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Pre-money valuation</div>
+        <div class="gloss-body">The agreed value of the company before the investment round closes and new capital enters. Determines the investor's equity stake: equity % = investment ÷ (pre-money + investment). NaaS anchors at €1M pre-money — a 50% discount to the blended model output of ~€2M. The discount is real, not manufactured from an inflated base.</div>
+        <div class="gloss-naas">€1M pre-money · €100K raise · equity: €100K ÷ €1.1M = 9.09% → 10%</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Monthly break-even</div>
+        <div class="gloss-body">The point at which monthly revenue exceeds monthly costs for the first time. Once passed, the business is no longer burning cash on a monthly basis — each subsequent month generates net positive cash. This is an easier milestone to hit than cumulative break-even because it ignores the accumulated Y1 losses.</div>
+        <div class="gloss-naas">Y2 Month 1 — revenue exceeds €8,333/month OpEx immediately</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Cumulative break-even</div>
+        <div class="gloss-body">The point at which total revenues since launch exceed total costs since launch — including all Y1 losses. This is the moment the business has "paid back" its startup deficit. Harder and later than monthly break-even, but the figure investors care about most when assessing whether a single raise is sufficient.</div>
+        <div class="gloss-naas">Y2 Month 8 — ~20 months from launch · €66K Y1 deficit fully recovered</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Pre-seed</div>
+        <div class="gloss-body">The earliest formal funding stage — before a seed round. Typically characterised by: no audited financials, limited or no revenue, a working prototype or MVP, and a founding team. Pre-seed valuations are inherently speculative; the 40% WACC reflects this. NaaS is at pre-seed with two pilot offices active and a live platform.</div>
+        <div class="gloss-naas">Stage: pre-seed · Raise: €100K · Instrument: equity</div>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY: REGULATORY & MARKET -->
+    <div class="section-label">Regulatory & market terms</div>
+    <div class="gloss-grid" style="margin-bottom:8px;">
+
+      <div class="gloss-card">
+        <div class="gloss-term">Law 214/2024</div>
+        <div class="gloss-body">Romanian national law on electronic signatures and trust services, effective October 2024. Clarifies the legal validity of advanced and simple electronic signatures for documents that do not require the strict formality of a notarial deed. Makes digital intake — forms, document collection, online payment — unambiguously compliant for the pre-appointment phase of a notarial workflow.</div>
+        <div class="gloss-naas">Published: Official Gazette, 8 Jul 2024 · Effective: 8 Oct 2024</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">ROeID</div>
+        <div class="gloss-body">Romania's national digital identity platform — a centralised system for electronic identification of citizens. By 2026, electronic identity cards are being rolled out to 5 million citizens. As adoption scales, remote identity verification ahead of notarial appointments becomes structurally possible, reducing the friction in the NaaS pre-appointment intake flow.</div>
+        <div class="gloss-naas">Target: 5M digital ID cards by 2026</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">e-Factura</div>
+        <div class="gloss-body">Romania's mandatory electronic invoicing system, extended to B2C transactions in 2025 and requiring all businesses — including notary offices — to accept electronic payments from January 2026. Directly removes the "we only accept cash/bank transfer" objection to the NaaS online payment flow. A regulatory tailwind, not a product feature.</div>
+        <div class="gloss-naas">Mandatory electronic payments: all businesses from Jan 2026</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">MoJ Order 177/C/2024</div>
+        <div class="gloss-body">Ministry of Justice Order setting minimum tariffs for notarial services in Romania. The source of the €35 average fee assumption. Sets minimum fees for declarations (~€10) and powers of attorney (~€20); market rates run €35–80 for standard acts. Using the lower market floor (€35) rather than the upper range makes the commission revenue assumption conservative.</div>
+        <div class="gloss-naas">Source for avg fee floor · Minimum: €10–20 · Market: €35–80</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">Notarial deed (act autentic)</div>
+        <div class="gloss-body">A document that has been formally authenticated by a public notary in the presence of the parties. Certain acts in Romanian law — real estate transfers, donations of property, wills, certain family law agreements — require this form. NaaS does not replace or digitise the notarial deed itself; physical presence at signing remains a legal requirement. NaaS digitises everything before and around it.</div>
+        <div class="gloss-naas">Physical signing remains required · NaaS = "online from start to signing"</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">CAGR <span class="gloss-full">Compound Annual Growth Rate</span></div>
+        <div class="gloss-body">The smoothed annual growth rate of a metric over a multi-year period, assuming growth compounds year on year. Used here to describe the global e-notary software market growth rate (14.3% CAGR 2025–2035). CAGR masks year-to-year variation — a useful benchmark figure, not a prediction of linear annual growth.</div>
+        <div class="gloss-naas">Global e-notary market: 14.3% CAGR · $3.8B (2025) → $14.5B (2035)</div>
+      </div>
+
+
+      <div class="gloss-card">
+        <div class="gloss-term">OECD <span class="gloss-full">Organisation for Economic Co-operation and Development</span></div>
+        <div class="gloss-body">An intergovernmental organisation of 38 member countries that collects and publishes economic, social, and demographic data. The OECD 2019 report <em>Talent Abroad: A Review of Romanian Emigrants</em> is one of the two primary sources for the 3.5M Romanian diaspora figure used in the market model.</div>
+        <div class="gloss-naas">Source: OECD (2019) "Talent Abroad" · Diaspora: ~3.5M Romanians abroad</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">OG <span class="gloss-full">Official Gazette (Monitorul Oficial)</span></div>
+        <div class="gloss-body">Romania's official publication for laws, government orders, and regulatory instruments. Any law or ministerial order cited in NaaS materials — including Law 214/2024 and MoJ Order 177/C/2024 — is only legally in force from the date it is published in the Official Gazette. The abbreviation "OG" followed by a date refers to the Gazette publication date, not the effective date.</div>
+        <div class="gloss-naas">Law 214/2024 published: OG 8 Jul 2024 · Effective: 8 Oct 2024</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">SDR <span class="gloss-full">Sales Development Representative</span></div>
+        <div class="gloss-body">A sales role dedicated to outbound prospecting — identifying, contacting, and qualifying potential customers before handing them to a closing salesperson. NaaS explicitly does not budget for an SDR in Y1 or Y2: all outreach is founder-led, which is why CAC is modelled low. If an SDR were hired, CAC would rise to €2,500+ and LTV:CAC would compress toward the conservative ceiling.</div>
+        <div class="gloss-naas">Not in NaaS plan · Absence is why CAC ~€500 is credible</div>
+      </div>
+
+      <div class="gloss-card">
+        <div class="gloss-term">MVP <span class="gloss-full">Minimum Viable Product</span></div>
+        <div class="gloss-body">The earliest functional version of a product that delivers enough value to attract real customers and generate meaningful feedback — without requiring full feature completeness. NaaS's current platform (Squarespace intake + Airtable case management + Zapier automation + Stripe payments) is an MVP: live, tested with pilot offices, and sufficient to onboard paying customers. Pre-seed investors are explicitly evaluating an MVP, not a finished product.</div>
+        <div class="gloss-naas">Status: live MVP · 2 pilot offices · platform tested end-to-end</div>
+      </div>
+
+    </div>
+
+    <hr class="rule">
+    <div class="section-label">Metric relationships · Causality, logic & what the numbers actually mean</div>
+
+    <hr class="rule" style="margin-top: 8px;">
+
+    <!-- METRIC RELATIONSHIPS -->
+    <div class="section-label" style="margin-top: 0;">How the metrics relate · Logic, causality & what the numbers actually mean</div>
+    <p style="font-size:11.5px; font-weight:300; color:var(--grey1); line-height:1.65; margin-bottom:28px; max-width:740px;">
+      Individual metrics tell you one thing. The relationships between them tell you whether a business works. This section explains the causal chains behind the NaaS model — how inputs drive outputs, which ratios matter most, and what it means when they move.
+    </p>
+
+    <!-- RELATIONSHIP 1: LTV:CAC -->
+    <div class="rel-block">
+      <div class="rel-header">
+        <div class="rel-formula">LTV ÷ CAC</div>
+        <div class="rel-title">The efficiency of the acquisition engine</div>
+      </div>
+      <div class="rel-body">
+        <div class="rel-explanation">
+          <p><strong>What it measures.</strong> For every euro spent acquiring a customer, how many euros does that customer return over their lifetime? LTV:CAC is the single most important ratio in a subscription business because it tells you whether your growth machine is profitable — not just whether you're growing.</p>
+          <p><strong>Why it matters here.</strong> Most SaaS businesses consider 3:1 healthy (you get back €3 for every €1 spent on acquisition). 10:1 is considered excellent. NaaS sits at 330:1 on the warm channel and 66:1 on the conservative ceiling. Both are extraordinary — not because the model is optimistic, but because the market structure is unusual: 1,984 known prospects, no paid acquisition, and a product with genuine switching costs once embedded.</p>
+          <p><strong>The causality chain.</strong> LTV is driven by blended ARR/office (€16,500) × assumed customer lifetime (10 years). CAC is driven by outreach cost per office — low because the UNNPR register gives you every prospect's name and contact, and warm referrals from early offices compress outreach to a call and a demo. The ratio is therefore not a projection of future performance; it is a structural consequence of market enumeration.</p>
+          <p><strong>What would break it.</strong> If churn is higher than assumed (offices leave faster than 10 years), LTV falls. If referral channels don't materialise and outreach is cold at scale, CAC rises toward €2,500. At 66:1, the ratio is still exceptional — which is why the conservative figure is the floor, not the ceiling, of the argument.</p>
+        </div>
+        <div class="rel-diagram">
+          <div class="rel-chain">
+            <div class="rel-node">Blended ARR<br><span>€16,500/office/yr</span></div>
+            <div class="rel-arrow">×</div>
+            <div class="rel-node">Lifetime<br><span>10 years</span></div>
+            <div class="rel-arrow">÷</div>
+            <div class="rel-node">CAC<br><span>~€500 warm</span></div>
+            <div class="rel-arrow rel-arrow-eq">=</div>
+            <div class="rel-node rel-node-result">LTV : CAC<br><span>~330 : 1</span></div>
+          </div>
+          <div class="rel-benchmarks">
+            <div class="rel-bm"><span class="bm-bar" style="width:9px; background:var(--grey3);"></span><span>3:1 — healthy SaaS</span></div>
+            <div class="rel-bm"><span class="bm-bar" style="width:30px; background:var(--grey2);"></span><span>10:1 — excellent</span></div>
+            <div class="rel-bm"><span class="bm-bar" style="width:100%; background:var(--red); opacity:0.7;"></span><span>330:1 — NaaS (warm)</span></div>
+            <div class="rel-bm"><span class="bm-bar" style="width:60%; background:var(--ink); opacity:0.35;"></span><span>66:1 — NaaS (conservative)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATIONSHIP 2: ARR composition -->
+    <div class="rel-block">
+      <div class="rel-header">
+        <div class="rel-formula">Subscription ARR + Commission ARR</div>
+        <div class="rel-title">Floor + lever: why two streams compound differently</div>
+      </div>
+      <div class="rel-body">
+        <div class="rel-explanation">
+          <p><strong>What it measures.</strong> ARR is total annual revenue at current run-rate. In NaaS, it has two structurally different components — and understanding the difference between them matters for how you present the model and how you stress-test it.</p>
+          <p><strong>Subscription ARR is the floor.</strong> It accrues from day one of onboarding, regardless of how many cases an office processes. It is predictable, contractual, and not sensitive to the acts/day assumption. Even under the stress test — with offices processing 10 acts/day instead of 25 — subscription ARR is unaffected. This is the line that protects the model from its weakest input.</p>
+          <p><strong>Commission ARR is the lever.</strong> It scales with case volume, which scales with the acts/day assumption, the average fee, and the commission rate. It is the growth engine above the subscription floor, but also the most assumption-sensitive component. When investors push on 25 acts/day, they are implicitly pushing on commission ARR — subscription ARR is not in question.</p>
+          <p><strong>The compounding interaction.</strong> As offices ramp to full utilisation, both streams grow simultaneously — but commission grows faster because it compounds case volume against the office count, not just the office count alone. By Y3 at 90% ramp, commission ARR is ~1.75× subscription ARR. The gap widens as utilisation matures.</p>
+        </div>
+        <div class="rel-diagram">
+          <div class="rel-stack-label">ARR composition by year (base case)</div>
+          <div class="rel-stack-row">
+            <div class="rel-stack-yr">Y1</div>
+            <div class="rel-stack-bar-wrap">
+              <div class="rel-stack-seg" style="width:49%; background:var(--ink);" title="Sub €45K"></div>
+              <div class="rel-stack-seg" style="width:51%; background:var(--grey2);" title="Comm €47K"></div>
+            </div>
+            <div class="rel-stack-total">€84K</div>
+          </div>
+          <div class="rel-stack-row">
+            <div class="rel-stack-yr">Y2</div>
+            <div class="rel-stack-bar-wrap">
+              <div class="rel-stack-seg" style="width:40%; background:var(--ink);"></div>
+              <div class="rel-stack-seg" style="width:60%; background:var(--grey2);"></div>
+            </div>
+            <div class="rel-stack-total">€462K</div>
+          </div>
+          <div class="rel-stack-row">
+            <div class="rel-stack-yr">Y3</div>
+            <div class="rel-stack-bar-wrap">
+              <div class="rel-stack-seg" style="width:36%; background:var(--ink);"></div>
+              <div class="rel-stack-seg" style="width:64%; background:var(--grey2);"></div>
+            </div>
+            <div class="rel-stack-total">€1.2M</div>
+          </div>
+          <div class="rel-stack-legend">
+            <span><span style="display:inline-block;width:10px;height:10px;background:var(--ink);border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Subscription</span>
+            <span><span style="display:inline-block;width:10px;height:10px;background:var(--grey2);border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Commission</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATIONSHIP 3: OpEx → Net Margin -->
+    <div class="rel-block">
+      <div class="rel-header">
+        <div class="rel-formula">ARR − OpEx = FCF → Net margin</div>
+        <div class="rel-title">Why the margin expands as offices scale</div>
+      </div>
+      <div class="rel-body">
+        <div class="rel-explanation">
+          <p><strong>What it measures.</strong> Net margin is the percentage of revenue that survives after all operating costs. It tells you how efficiently the business converts revenue to profit. For most businesses, margin compresses as they scale — more customers require more infrastructure, more people, more cost. NaaS is the opposite.</p>
+          <p><strong>Why OpEx is (almost) fixed.</strong> The platform stack — Squarespace, Airtable, Zapier, Stripe — has near-zero marginal cost per additional office or case. Adding office number 50 does not require another Airtable licence, another Zapier plan, or another founder. The per-unit cost of serving a customer approaches zero as the base grows. This is the defining characteristic of a software platform, and the reason 92.5% net margin at Y3 is architecturally justified, not wishful.</p>
+          <p><strong>The expanding margin logic.</strong> OpEx stays roughly flat (€150K → €100K → €90K) while ARR grows from €84K to €1.2M. The ratio of OpEx to ARR collapses from 178% in Y1 to 7.5% in Y3. Every additional office added after break-even is almost pure margin — the incremental cost of serving them is essentially the marginal Stripe fee and a tiny fraction of Zapier quota.</p>
+          <p><strong>What would compress the margin.</strong> Hiring (an SDR, a support person, a second founder drawing salary) is the primary risk. The Y3 margin assumes no salaries drawn. If a support hire is needed at Y3, OpEx rises to ~€130–150K — margin compresses to ~88%, still exceptional. The model is sensitive to headcount, not to office count.</p>
+        </div>
+        <div class="rel-diagram">
+          <div class="rel-margin-rows">
+            <div class="rel-margin-row">
+              <div class="rel-margin-yr">Y1</div>
+              <div class="rel-margin-wrap">
+                <div class="rel-margin-opex" style="width:100%;">OpEx €150K</div>
+                <div class="rel-margin-arr" style="width:56%;">ARR €84K</div>
+              </div>
+              <div class="rel-margin-val" style="color:var(--red);">−78%</div>
+            </div>
+            <div class="rel-margin-row">
+              <div class="rel-margin-yr">Y2</div>
+              <div class="rel-margin-wrap">
+                <div class="rel-margin-arr" style="width:100%; background:var(--grey2);">ARR €462K</div>
+                <div class="rel-margin-opex" style="width:22%; position:absolute; left:0; top:0; background: repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(0,0,0,0.08) 3px,rgba(0,0,0,0.08) 6px); border:1px solid var(--rule);">€100K</div>
+              </div>
+              <div class="rel-margin-val">+78%</div>
+            </div>
+            <div class="rel-margin-row">
+              <div class="rel-margin-yr">Y3</div>
+              <div class="rel-margin-wrap">
+                <div class="rel-margin-arr" style="width:100%; background:var(--ink); opacity:0.85;">ARR €1.2M</div>
+                <div class="rel-margin-opex" style="width:7.5%; position:absolute; left:0; top:0; background:var(--red); opacity:0.7;">€90K</div>
+              </div>
+              <div class="rel-margin-val">+92.5%</div>
+            </div>
+          </div>
+          <p style="font-size:9.5px; color:var(--grey1); margin-top:10px; font-family:var(--mono);">Bar width = relative share of Y3 ARR. OpEx overlay shows cost as % of revenue.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATIONSHIP 4: Ramp → Break-even -->
+    <div class="rel-block">
+      <div class="rel-header">
+        <div class="rel-formula">Ramp rate × office count → monthly FCF → cumulative FCF</div>
+        <div class="rel-title">How ramp rates determine the break-even timeline</div>
+      </div>
+      <div class="rel-body">
+        <div class="rel-explanation">
+          <p><strong>What ramp rate is.</strong> Offices don't generate full revenue from day one. A newly onboarded office in month 3 of Y1 has only been active for a fraction of the year — and even within that window, it takes time for the notary to shift case volume onto the platform. The ramp rate is the model's way of accounting for this lag without having to model each office's individual onboarding curve.</p>
+          <p><strong>Two separate ramps, two different reasons.</strong> Subscription ramp is 50% in Y1 because offices onboard roughly one per month — the cohort averages 6.5 months of active subscription across the year. Commission ramp is lower (30% in Y1) because even after onboarding, offices process cases through the platform gradually — notaries change habits slowly, and clients need to learn the intake flow. By Y2 the gap narrows (80%/70%); by Y3 both converge to 90%.</p>
+          <p><strong>How ramp creates break-even timing.</strong> Y1 generates €84K ARR against €150K OpEx — a −€66K deficit. In Y2, the now-mature Y1 cohort (15 offices, approaching 90% utilisation) generates significant monthly revenue alongside the ramping Y2 cohort. By Y2 Month 1, the combined monthly revenue of all active offices exceeds monthly OpEx of €8,333. The cumulative deficit (−€66K) is then paid down progressively — fully cleared by Y2 Month 8.</p>
+          <p><strong>The critical dependency.</strong> The break-even timeline is directly sensitive to the Y1 → Y2 cohort maturation rate. If Y1 offices churn or stall at low utilisation, Y2 Month 1 break-even slips. This is the primary operational risk in the near-term model — retention and activation of the Y1 cohort is more important to the timeline than the rate of new office onboarding.</p>
+        </div>
+        <div class="rel-diagram">
+          <div class="rel-stack-label">Cumulative FCF path (Y1–Y2, base case)</div>
+          <div class="rel-be-timeline">
+            <div class="rel-be-row" style="--pct: 0%;">
+              <span class="rel-be-label">Launch</span>
+              <div class="rel-be-track"><div class="rel-be-fill neg" style="width:100%"></div></div>
+              <span class="rel-be-val" style="color:var(--red);">−€0</span>
+            </div>
+            <div class="rel-be-row">
+              <span class="rel-be-label">Y1 end</span>
+              <div class="rel-be-track"><div class="rel-be-fill neg" style="width:100%"></div></div>
+              <span class="rel-be-val" style="color:var(--red);">−€66K</span>
+            </div>
+            <div class="rel-be-row">
+              <span class="rel-be-label">Y2 M1 ✓</span>
+              <div class="rel-be-track"><div class="rel-be-fill neg" style="width:95%"></div></div>
+              <span class="rel-be-val" style="color:var(--red);">−€62K</span>
+            </div>
+            <div class="rel-be-row">
+              <span class="rel-be-label">Y2 M4</span>
+              <div class="rel-be-track"><div class="rel-be-fill neg" style="width:62%"></div></div>
+              <span class="rel-be-val" style="color:var(--red);">−€41K</span>
+            </div>
+            <div class="rel-be-row">
+              <span class="rel-be-label">Y2 M7</span>
+              <div class="rel-be-track"><div class="rel-be-fill neg" style="width:7%"></div></div>
+              <span class="rel-be-val" style="color:var(--red);">−€5K</span>
+            </div>
+            <div class="rel-be-row">
+              <span class="rel-be-label">Y2 M8 ✓✓</span>
+              <div class="rel-be-track"><div class="rel-be-fill pos" style="width:16%"></div></div>
+              <span class="rel-be-val" style="color:var(--ink);">+€11K</span>
+            </div>
+            <div class="rel-be-row">
+              <span class="rel-be-label">Y2 end</span>
+              <div class="rel-be-track"><div class="rel-be-fill pos" style="width:100%"></div></div>
+              <span class="rel-be-val">+€362K</span>
+            </div>
+          </div>
+          <p style="font-size:9px; font-family:var(--mono); color:var(--grey1); margin-top:8px;">✓ = monthly break-even &nbsp;·&nbsp; ✓✓ = cumulative break-even</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATIONSHIP 5: WACC → Valuation -->
+    <div class="rel-block">
+      <div class="rel-header">
+        <div class="rel-formula">FCF ÷ (1 + WACC)ⁿ → PV → Valuation</div>
+        <div class="rel-title">Why a 40% discount rate produces a conservative — not punishing — valuation</div>
+      </div>
+      <div class="rel-body">
+        <div class="rel-explanation">
+          <p><strong>What discounting does.</strong> A DCF says: "cash in the future is worth less than cash today, because of risk and opportunity cost." The WACC is the annual penalty applied — at 40%, every year of distance cuts the present value of a future cash flow roughly in half. This is why even a €2.9M Y5 FCF is worth only ~€537K in today's money at 40% WACC.</p>
+          <p><strong>Why 40% is appropriate, not punitive.</strong> Pre-seed stage means no audited financials, no proven sales motion, no second founder, and early-stage market validation. The standard WACC for this stage in investor practice ranges from 30–50%. Using 40% is not pessimism — it is the honest application of risk-adjusted discounting to a business that has not yet de-risked itself through revenue, retention data, or audited accounts.</p>
+          <p><strong>The blended valuation logic.</strong> Rather than relying on DCF alone (which is sensitive to terminal value assumptions), NaaS uses two methods: DCF and a revenue multiple applied to SOM. The two methods yield different figures (€3.07M DCF vs €1.53M revenue multiple) — averaging them to €2.3M and anchoring the pre-money at €1M produces a genuine 50% discount. This is investor-friendly structuring, not financial sleight of hand.</p>
+          <p><strong>What to watch.</strong> The terminal value (€1,496K PV) is the largest single component of the DCF. Terminal value assumes growth continues at 3% forever after Y5. This assumption is speculative — a 1,984-office finite market has a ceiling. Be honest that terminal value is a modelling convention for DCF purposes, not an operational claim.</p>
+        </div>
+        <div class="rel-diagram">
+          <div class="rel-stack-label">PV of each year's FCF at 40% WACC</div>
+          <div class="rel-dcf-rows">
+            <div class="rel-dcf-row">
+              <span class="rel-dcf-yr">Y1</span>
+              <div class="rel-dcf-bar-wrap">
+                <div class="rel-dcf-neg" style="width:100%;">−€47K PV</div>
+              </div>
+            </div>
+            <div class="rel-dcf-row">
+              <span class="rel-dcf-yr">Y2</span>
+              <div class="rel-dcf-bar-wrap">
+                <div class="rel-dcf-pos" style="width:34%;">+€185K</div>
+              </div>
+            </div>
+            <div class="rel-dcf-row">
+              <span class="rel-dcf-yr">Y3</span>
+              <div class="rel-dcf-bar-wrap">
+                <div class="rel-dcf-pos" style="width:75%;">+€405K</div>
+              </div>
+            </div>
+            <div class="rel-dcf-row">
+              <span class="rel-dcf-yr">Y4 est.</span>
+              <div class="rel-dcf-bar-wrap">
+                <div class="rel-dcf-pos" style="width:92%;">+€497K</div>
+              </div>
+            </div>
+            <div class="rel-dcf-row">
+              <span class="rel-dcf-yr">Y5 est.</span>
+              <div class="rel-dcf-bar-wrap">
+                <div class="rel-dcf-pos" style="width:100%;">+€537K</div>
+              </div>
+            </div>
+            <div class="rel-dcf-row" style="margin-top:6px; border-top: 1px solid var(--rule); padding-top:6px;">
+              <span class="rel-dcf-yr" style="color:var(--ink);">Term. val.</span>
+              <div class="rel-dcf-bar-wrap">
+                <div class="rel-dcf-pos" style="width:100%; background:var(--ink); opacity:0.6;">+€1,496K PV</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border:1px solid var(--rule); margin-top:14px;">
+            <div style="padding:10px 12px; border-right:1px solid var(--rule);">
+              <div style="font-family:var(--mono); font-size:8px; color:var(--grey1); letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">DCF total</div>
+              <div style="font-family:var(--serif); font-size:16px; font-weight:700; font-style:italic;">€3.07M</div>
+            </div>
+            <div style="padding:10px 12px; border-right:1px solid var(--rule);">
+              <div style="font-family:var(--mono); font-size:8px; color:var(--grey1); letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Rev. multiple</div>
+              <div style="font-family:var(--serif); font-size:16px; font-weight:700; font-style:italic;">€1.53M</div>
+            </div>
+            <div style="padding:10px 12px;">
+              <div style="font-family:var(--mono); font-size:8px; color:var(--grey1); letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Pre-money anchor</div>
+              <div style="font-family:var(--serif); font-size:16px; font-weight:700; font-style:italic; color:var(--red);">€1M (−50%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATIONSHIP 6: TAM → SAM → SOM -->
+    <div class="rel-block" style="margin-bottom:0;">
+      <div class="rel-header">
+        <div class="rel-formula">TAM → SAM → SOM → ARR</div>
+        <div class="rel-title">The funnel from total market to actual revenue</div>
+      </div>
+      <div class="rel-body">
+        <div class="rel-explanation">
+          <p><strong>What the funnel represents.</strong> TAM → SAM → SOM is a standard investor framework for sizing markets in decreasing order of realism. Each step applies a filter — not a discount for pessimism, but a recognition of what the business can actually reach given its product, geography, and stage.</p>
+          <p><strong>TAM: the ceiling, not the target.</strong> €417M assumes NaaS serves all 1,984 offices at 25 acts/day, €35 average fee, 5% commission, plus €500/month subscription — 100% market penetration at full utilisation. No business achieves this. TAM exists to show the outer boundary of the opportunity and to contextualise how much headroom exists above the SOM.</p>
+          <p><strong>SAM: what's realistically reachable.</strong> ~1,000 of the 1,984 offices are considered serviceable — the urban, digitally-ready cohort that has the infrastructure (internet, hardware, basic digital literacy) and the case volume profile that makes NaaS valuable. The 50% filter is a judgement call. No official UNNPR segmentation by digital readiness exists — this should be disclosed if challenged.</p>
+          <p><strong>SOM: the 5-year target.</strong> 10% of SAM — 100 offices at €16,500 blended yield — is the conventional pre-seed convention for what a company can realistically capture in its first 5 years. NaaS's Y5 trajectory (150 offices) slightly exceeds this, which is a positive signal: the modelled trajectory implies SOM-plus capture, not just SOM.</p>
+          <p><strong>The connection to ARR.</strong> SOM × blended yield per office = SOM ARR (€1.65M). This is the revenue figure used in the revenue multiple valuation method (5× SOM = €8.25M terminal value). The chain is: market definition → office count → blended yield → SOM ARR → valuation. Every link in the chain has a disclosed assumption or cited source.</p>
+        </div>
+        <div class="rel-diagram">
+          <div class="rel-funnel">
+            <div class="rel-funnel-row">
+              <div class="rel-funnel-bar" style="width:100%; background:var(--grey3); border:1px solid var(--rule);">
+                <span class="rel-funnel-label">TAM — €417M</span>
+                <span class="rel-funnel-sub">1,984 offices · full utilisation · 100% penetration</span>
+              </div>
+            </div>
+            <div class="rel-funnel-arrow">↓ 50% filter: urban, digitally-ready offices</div>
+            <div class="rel-funnel-row">
+              <div class="rel-funnel-bar" style="width:50%; background:var(--grey2);">
+                <span class="rel-funnel-label">SAM — €16.5M</span>
+                <span class="rel-funnel-sub">~1,000 offices · blended yield €16,500</span>
+              </div>
+            </div>
+            <div class="rel-funnel-arrow">↓ 10% of SAM: 5-year realistic capture</div>
+            <div class="rel-funnel-row">
+              <div class="rel-funnel-bar" style="width:10%; background:var(--ink); min-width:120px;">
+                <span class="rel-funnel-label" style="color:var(--white);">SOM — €1.65M</span>
+                <span class="rel-funnel-sub" style="color:rgba(255,255,255,0.6);">100 offices · Y5</span>
+              </div>
+            </div>
+            <div class="rel-funnel-arrow" style="color:var(--red);">↓ NaaS Y5 trajectory</div>
+            <div class="rel-funnel-row">
+              <div class="rel-funnel-bar" style="width:15%; background:var(--red); min-width:150px;">
+                <span class="rel-funnel-label" style="color:var(--white);">ARR — ~€2.5M est.</span>
+                <span class="rel-funnel-sub" style="color:rgba(255,255,255,0.7);">150 offices · exceeds SOM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div><!-- /glossary-body -->
+
   <!-- FOOTER -->
   <div class="footer">
     <span>NaaS · notariat.co · Timișoara, Romania · 2026 pre-seed · v2</span>
@@ -1174,12 +1974,11 @@ function setScenario(name) {
   update();
 }
 
-function toggleExplainer() {
-  const body  = document.getElementById('explainer');
-  const icon  = document.getElementById('toggle-icon');
-  const open  = body.classList.toggle('open');
+function toggleSection(bodyId, iconId) {
+  const body = document.getElementById(bodyId);
+  const icon = document.getElementById(iconId);
+  const open = body.classList.toggle('open');
   icon.classList.toggle('open', open);
-  icon.textContent = open ? '+' : '+';
 }
 
 initChart();
